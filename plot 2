@@ -1,0 +1,10 @@
+Copy and paste rows with date=1/2/2007 and 2/2/2007 to another text file named as HPC_Useful
+
+> HPC_Useful <- read.csv("~/Analytic training/Coursera/Week 1/HPC_Useful.txt", sep=";")
+>   View(HPC_Useful)
+> Date_Time <- paste(HPC_Useful$Date,HPC_Useful$Time,sep = "_")
+> HPC_Useful_new <- cbind(HPC_Useful,Date_Time)
+> View(HPC_Useful_new)
+> plot(HPC_Useful_new$Date_Time,HPC_Useful_new$Global_active_power)
+> plot(HPC_Useful_new$Date_Time,HPC_Useful_new$Global_active_power,xaxt="n",ylab = "Global Active Power (kilowatts)")
+> axis(side = 1, at = c(1,1441,2880), labels = c("Thu","Fri","Sat"))
