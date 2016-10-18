@@ -1,0 +1,11 @@
+Copy and paste rows with date=1/2/2007 and 2/2/2007 to another text file named as HPC_Useful
+
+> HPC_Useful <- read.csv("~/Analytic training/Coursera/Week 1/HPC_Useful.txt", sep=";")
+>   View(HPC_Useful)
+> Date_Time <- paste(HPC_Useful$Date,HPC_Useful$Time,sep = "_")
+> HPC_Useful_plot3 <- cbind(HPC_Useful,Date_Time)
+> plot(HPC_Useful_plot3$Date_Time, HPC_Useful_plot3$Sub_metering_1, col = "black",type = "l", xaxt= "n", ylab = "Energy sub metering")
+> points(HPC_Useful_plot3$Date_Time, HPC_Useful_plot3$Sub_metering_2, col = "red", type = "l", lwd = 0.5, xaxt = "n")
+> points(HPC_Useful_plot3$Date_Time, HPC_Useful_plot3$Sub_metering_3, col = "blue", type = "l", lwd = 0.5, xaxt = "n")
+> axis(side = 1, at = c(1,1441,2880),labels = c("Thu","Fri","Sat"))
+> legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty = c(1,1,1), col = c("black","red","blue"))
